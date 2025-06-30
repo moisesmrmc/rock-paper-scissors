@@ -7,10 +7,21 @@ Math.random() - entre 0 y 1 <-- pensar como hacerlo para 3 opciones
     PAPER
     SCISSOR
 */
+//rock=0 paper=1 scissors=2
 function getComputerChoice(){
+    let computerChoice;
     let number = Math.floor(Math.random()*3);
-    console.log(number);
-    return number;
+    if(number == 0){
+        computerChoice = "Rock";
+        console.log(computerChoice);
+    }else if (number == 1){
+        computerChoice = "Paper";
+        console.log(computerChoice);
+    }else{
+        computerChoice = "Scissor";
+        console.log(computerChoice);
+    }
+    return computerChoice;
 }
 getComputerChoice();
 /*
@@ -38,6 +49,12 @@ Ahora haremos la lógica para el enfrentamiento
     IGUALES = IGUALES
 */
 
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+function playRound(humanChoice, computerChoice){
+
+}
 /*
 Después sumaremos los puntos a
     humanScore
