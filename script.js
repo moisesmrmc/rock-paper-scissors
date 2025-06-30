@@ -53,27 +53,27 @@ function playRound(humanChoice, computerChoice){
         console.log("Empate");
     }
     else if(humanChoice == "paper" && computerChoice == "rock"){
-        console.log("punto para humano");
+        console.log("You win! Paper beats rock!");
         humanScore++;
     }
     else if(humanChoice == "paper" && computerChoice == "scissor"){
-        console.log("punto para maquina");
+        console.log("You lose! Paper beats Scissor!");
         computerScore++;
     }
     else if(humanChoice == "scissor" && computerChoice == "rock"){
-        console.log("punto para maquina");
+        console.log("You lose! Scissor beats Rock!");
         computerScore++;
     }
     else if(humanChoice == "scissor" && computerChoice == "paper"){
-        console.log("punto para humano");
+        console.log("You win! Scissor beats paper!");
         humanScore++;
     }
     else if(humanChoice == "rock" && computerChoice == "paper"){
-        console.log("punto para maquina");
+        console.log("You lose! Rock beats Paper!");
         computerScore++;  
     }
     else if(humanChoice == "rock" && computerChoice == "scissor"){
-        console.log("punto para humano");
+        console.log("You win! Rock beats Scissor!");
         humanScore++;
     }
 }
