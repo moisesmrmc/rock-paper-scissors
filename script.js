@@ -12,13 +12,13 @@ function getComputerChoice(){
     let computerChoice;
     let number = Math.floor(Math.random()*3);
     if(number == 0){
-        computerChoice = "Rock";
+        computerChoice = "rock";
         console.log(computerChoice);
     }else if (number == 1){
-        computerChoice = "Paper";
+        computerChoice = "paper";
         console.log(computerChoice);
     }else{
-        computerChoice = "Scissor";
+        computerChoice = "scissor";
         console.log(computerChoice);
     }
     return computerChoice;
@@ -29,8 +29,9 @@ Tendremos otra función para obtener el INPUT del usuario
 prompt(" ", ) */
 function getHumanChoice(){
     let choice = prompt("Rock, Paper or Scissor?", );
-    console.log(`You selected ${choice}`);
-    return choice;
+    let choiceLowerCase = choice.toLowerCase();
+    console.log(choiceLowerCase);
+    return choiceLowerCase;
 }
 getHumanChoice();
 /*
@@ -53,7 +54,7 @@ const humanChoice = getHumanChoice();
 const computerChoice = getComputerChoice();
 
 function playRound(humanChoice, computerChoice){
-
+    
 }
 /*
 Después sumaremos los puntos a
