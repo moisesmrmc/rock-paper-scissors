@@ -46,11 +46,14 @@ Ahora haremos la lógica para el enfrentamiento
     PAPEL < TIJERA
     PIEDRA > TIJERA
     IGUALES = IGUALES
+Después sumaremos los puntos a
+    humanScore
+    computerScore
 */
 
 function playRound(humanChoice, computerChoice){
     if(humanChoice == computerChoice){
-        console.log("Empate");
+        console.log("Draw");
     }
     else if(humanChoice == "paper" && computerChoice == "rock"){
         console.log("You win! Paper beats rock!");
@@ -77,18 +80,26 @@ function playRound(humanChoice, computerChoice){
         humanScore++;
     }
 }
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
-playRound(humanChoice,computerChoice);
-console.log(`Tienes ${humanScore} punto/s`);
-console.log(`La máquina tiene ${computerScore} punto/s`);
+//Ahora vamos a hacer la lógica para que se jueguen 5 rondas
+//Jugar 5 rondas = bucle FOR de 5
 
-/*
-Después sumaremos los puntos a
-    humanScore
-    computerScore
-*/
-
+function playGame(){
+    for (let i=0; i<5; i++){
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+        playRound(humanChoice,computerChoice);
+        console.log(`Tienes ${humanScore} punto/s`);
+        console.log(`La máquina tiene ${computerScore} punto/s`);
+    }
+    if(humanScore > computerScore){
+        console.log("You win the game!");
+    }else if(humanScore < computerScore){
+        console.log("You lose the game");
+    }else{
+        console.log("It's a draw!");
+    }
+} 
+playGame();
 
 
 
