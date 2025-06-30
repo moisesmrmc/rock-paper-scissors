@@ -23,7 +23,6 @@ function getComputerChoice(){
     }
     return computerChoice;
 }
-getComputerChoice();
 /*
 Tendremos otra función para obtener el INPUT del usuario
 prompt(" ", ) */
@@ -33,7 +32,6 @@ function getHumanChoice(){
     console.log(choiceLowerCase);
     return choiceLowerCase;
 }
-getHumanChoice();
 /*
 Después contaremos la puntuación de la consola y del usuario (empezarán en 0)
     humanScore 
@@ -50,12 +48,41 @@ Ahora haremos la lógica para el enfrentamiento
     IGUALES = IGUALES
 */
 
+function playRound(humanChoice, computerChoice){
+    if(humanChoice == computerChoice){
+        console.log("Empate");
+    }
+    else if(humanChoice == "paper" && computerChoice == "rock"){
+        console.log("punto para humano");
+        humanScore++;
+    }
+    else if(humanChoice == "paper" && computerChoice == "scissor"){
+        console.log("punto para maquina");
+        computerScore++;
+    }
+    else if(humanChoice == "scissor" && computerChoice == "rock"){
+        console.log("punto para maquina");
+        computerScore++;
+    }
+    else if(humanChoice == "scissor" && computerChoice == "paper"){
+        console.log("punto para humano");
+        humanScore++;
+    }
+    else if(humanChoice == "rock" && computerChoice == "paper"){
+        console.log("punto para maquina");
+        computerScore++;  
+    }
+    else if(humanChoice == "rock" && computerChoice == "scissor"){
+        console.log("punto para humano");
+        humanScore++;
+    }
+}
 const humanChoice = getHumanChoice();
 const computerChoice = getComputerChoice();
+playRound(humanChoice,computerChoice);
+console.log(`Tienes ${humanScore} punto/s`);
+console.log(`La máquina tiene ${computerScore} punto/s`);
 
-function playRound(humanChoice, computerChoice){
-    
-}
 /*
 Después sumaremos los puntos a
     humanScore
